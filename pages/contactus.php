@@ -5,29 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>CONTACT US</title>
-    <link rel="stylesheet" type="text/css" href="contactus.css">
+    <link rel="stylesheet" type="text/css" href="../style/index.css">
 </head>
 <body>
 <div class="header">
-    <h1>CONTACT US</h1>
+    <h1>Contact us</h1>
+    <!-- include nav here  -->
+<?php include('../components/pagesnav.php'); ?>
 </div>
-<div class="nav">
-    <ul>
-        <li><a href="index.php">HOME</a></li>
-        <li><a href="aboutus.php">ABOUT US</a></li>
-        <li><a href="services.php">SERVICES</a></li>
-        <li><a href="contactus.php">CONTACT US</a></li>
-        <li><a href="registration.php">SIGN UP</a></li>
-        <li><a href="login.php">SIGN IN</a></li>
-     </ul>
- </div>
-<div class="section">
-    <div class="sec">
-        <h1><big>Contact Us!!</big></h1>
-    </div>
+
+<div class="section">   
     <div class="sect">
         <h2><big><mark>Please fill this form if you have any query!</mark></big></h3>
-        <form action="contactus.php" method="post">
+        <form action="../pages/contactus.php"" method="post">
             <fieldset>
                 <legend><h2>Personal Details</h2></legend>
 
@@ -59,12 +49,7 @@
     </div>
 </div>
 <div class="footer">
-    <ul>
-        <li><a href="privacypolicy.php">PRIVACY POLICY</a></li>
-        <li><a href="termsofuse.php">TERMS OF USE</a></li>
-        <li><a href="helpcenter.php">HELP CENTER</a></li>
-    </ul>
-    <p>@2023. All Rights Reserved.</p>
+<?php include('../components/footer.php'); ?>
 </div>
 </body>
 </html>

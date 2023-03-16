@@ -1,0 +1,24 @@
+.body {
+	width: 1900px;
+	height: 100%;
+	font: sans-serif;
+	font-size: 20px;
+}
+.header {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+.nav {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	background-color: black;
+	color: white;
+	word-spacing: 3px;
+}
+.section {
+	min-height: 100vh;
+}
