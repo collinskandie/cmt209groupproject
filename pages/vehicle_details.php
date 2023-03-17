@@ -33,6 +33,7 @@
         echo '<p>Year: ' . $row['year'] . '</p>';
         echo '<p>Price per day: ' . $row['price_per_day'] . '</p>';
         // echo '<p>Description: ' . $row['description'] . '</p>';
+        echo '<button onclick="window.location.href=\'../components/bookingform.php?id=' . $row['id'] . '\'">Book </button>';
     } else {
         // If no vehicle record is found with the given ID, display an error message
         echo '<p>Vehicle not found.</p>';
