@@ -23,13 +23,13 @@
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
+        $price= $row['price_per_day'];
 
         // Display the vehicle details
         echo '<h1>' . $row['make'] . ' ' . $row['model'] . '</h1>';
         echo '<img src="data:image/jpeg;base64,' . base64_encode($row['picture']) . '" width="300" height="300" />';
         echo '<p>Year: ' . $row['year'] . '</p>';
-        echo '<p id="price">Price per day: </p>';
-        echo '<span id="price-value"><?php echo $row["price_per_day"]; ?></span>';
+        echo '<p id="price">Price per day: ' . $price . '</p>';
     } else {
         // If no vehicle record is found with the given ID, display an error message
         echo '<p>Vehicle not found.</p>';
@@ -53,7 +53,7 @@
         function updatePrice() {
             let startDate = new Date(document.getElementById("start_date").value);
             let endDate = new Date(document.getElementById("end_date").value);
-            let pricePerDay = parseFloat(document.getElementById("price-value").textContent);
+            let pricePerDay = <?php echo $price ?>;
 
             let differenceInMs = endDate.getTime() - startDate.getTime();
             let differenceInDays = differenceInMs / (1000 * 3600 * 24);

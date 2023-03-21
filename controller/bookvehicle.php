@@ -42,11 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (mysqli_stmt_execute($stmt)) {
         // Redirect to a success page or display a success message
-        echo '<p>Success</p>';
+        header("Location: ../pages/bookinglist.php?success=1");
+        // echo '<p>Success</p>';
         // header("Location: success.php");
         exit();
     } else {
-        // Redirect to an error page or display an error message
+        header("Location: ../pages/bookinglist.php?error=1");
         die("Error inserting hire details: " . mysqli_error($conn));
     }
 

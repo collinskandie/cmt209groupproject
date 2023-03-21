@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+// Access session variable
+$user_id = $_SESSION['user_id'];
+?>
 <html lang="en">
 
 <head>
@@ -30,8 +35,9 @@
 
 <body>
     <div class="header">
-        <h1>LECCS CAR HIRE</h1>
-        <?php include('./components/nav.php'); ?><h2>
+        <h1>Home</h1>
+        <?php include('./components/nav.php'); ?>
+        <h2>
             <marquee>Welcome to LECCS Car Hire</marquee>
         </h2>
     </div>

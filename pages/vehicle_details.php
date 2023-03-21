@@ -10,8 +10,10 @@
 </head>
 
 <body>
-<?php include('../controller/connection.php'); ?>
-    <?php    
+    <?php include('../controller/connection.php');
+    include('../components/pagesnav.php');
+    ?>
+    <?php
     if (isset($_GET['id'])) {
         $vehicle_id = $_GET['id'];
     } else {

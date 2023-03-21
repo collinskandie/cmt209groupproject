@@ -1,72 +1,56 @@
-
-.body{
-    width: 1900px;
-    height: auto;
-    font: sans-serif;
-    font-size: 20px;
-}
-.header {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    background-color: black;
-    color: white;
-}
-.nav{
-    width: 100%;
-    height: auto;
-    background-color: black;
-    text-align: center;
-    color: white;
-    word-spacing: 3px;
-}
-.section{
-    width: 100%;
-    height: auto;
-    background-color: floralwhite;
-    color: black;
-}
-.sec{
-    text-align: center;
-    color: black;
-}
-.sect{
-    
-    text-align: center;
-    color: black;
-}
-.footer {
-    width: 100%;
-    height: auto;
-    text-decoration-color: white;
-    background-color: black;
-    color: white;
-    text-align: center;
-}
-ul {
-    text-decoration-color: black;
-    color: white;
-    padding: 20px;
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
 }
 
-    ul li {
-        display:inline;
-        padding:20px;
-        text-decoration:white;
-        color: black;
+h2 {
+	text-align: center;
+	margin-top: 50px;
+	color: #333;
+}
 
-    }
+form {
+	margin: 0 auto;
+	width: 600px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px #ccc;
+	border-radius: 5px;
+}
 
-        ul li a {
-            text-decoration: white;
-            color: white;
-            font-size: 125%;
-            padding:50px;
-        }
+label {
+	display: block;
+	margin-bottom: 5px;
+	color: #666;
+}
 
-            ul li a:hover {
-                text-decoration-color: red;
-                display: inline;
-                color:red;
-            }
-         
+input[type="text"],
+input[type="password"] {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	font-size: 16px;
+	
+} 
+
+input[type="submit"] {
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background-color: #3e8e41;
+}
+
+.error {
+	color: red;
+	margin-bottom: 10px;
+}
