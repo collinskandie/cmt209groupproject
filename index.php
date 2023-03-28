@@ -1,7 +1,9 @@
 <?php
 session_start();
-
-// Access session variable
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ./pages/login.php');
+    exit();
+}
 $user_id = $_SESSION['user_id'];
 ?>
 <html lang="en">

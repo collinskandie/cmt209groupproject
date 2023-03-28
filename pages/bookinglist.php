@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../pages/login.php');
+    exit();
+}
+$user_id = $_SESSION['user_id'];
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -78,8 +86,7 @@
         if (isset($_SESSION['delete_success'])) {
             echo '<p class="w3-panel w3-pale-red w3-border">Booking record deleted successfully!</p>';
             unset($_SESSION['delete_success']);
-        }
-        else if (isset($_SESSION['update_success'])) {
+        } else if (isset($_SESSION['update_success'])) {
             echo '<p class="w3-panel w3-pale-red w3-border">Booking record edited successfully!</p>';
             unset($_SESSION['update_success']);
         }

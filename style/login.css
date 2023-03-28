@@ -25,6 +25,7 @@ label {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
 	width: 90%;
 	padding: 10px;
@@ -32,8 +33,7 @@ input[type="password"] {
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	font-size: 16px;
-	
-} 
+}
 
 input[type="submit"] {
 	background-color: #4caf50;
