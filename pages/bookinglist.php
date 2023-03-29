@@ -82,7 +82,7 @@ $user_id = $_SESSION['user_id'];
         } else if (isset($_GET['error'])) {
             echo '<p class="w3-panel w3-pale-red w3-border">Error: Booking Failed</p>';
         }
-        session_start();
+        // session_start();
         if (isset($_SESSION['delete_success'])) {
             echo '<p class="w3-panel w3-pale-red w3-border">Booking record deleted successfully!</p>';
             unset($_SESSION['delete_success']);
@@ -92,9 +92,9 @@ $user_id = $_SESSION['user_id'];
         }
         include('../controller/connection.php');
 
-        $sql = "SELECT hires.*, users.username, vehicles.model
+        $sql = "SELECT hires.*, user_logins.full_name, vehicles.model
         FROM hires
-        INNER JOIN users ON hires.user_id = users.id
+        INNER JOIN user_logins ON hires.user_id = user_logins.id
         INNER JOIN vehicles ON hires.vehicle_id = vehicles.id";
         $result = mysqli_query($conn, $sql);
 
@@ -105,7 +105,7 @@ $user_id = $_SESSION['user_id'];
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>" . $row["id"] . "</td>";
-            echo "<td>" . $row["username"] . "</td>";
+            echo "<td>" . $row["full_name"] . "</td>";
             echo "<td>" . $row["model"] . "</td>";
             echo "<td>" . $row["start_date"] . "</td>";
             echo "<td>" . $row["end_date"] . "</td>";

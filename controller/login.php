@@ -1,6 +1,6 @@
 <?php
 include('../controller/connection.php'); 
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Get username and password from form
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -30,3 +30,5 @@ if (mysqli_num_rows($result) > 0) {
 }
 // Close database connection
 mysqli_close($conn);
+}
+?>

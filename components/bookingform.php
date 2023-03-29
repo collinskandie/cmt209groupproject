@@ -23,7 +23,7 @@
 
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        $price= $row['price_per_day'];
+        $price = $row['price_per_day'];
 
         // Display the vehicle details
         echo '<h1>' . $row['make'] . ' ' . $row['model'] . '</h1>';
@@ -43,9 +43,10 @@
     echo  '<input type="date" id="start_date" onchange="updatePrice()" name="start_date" required><br><br>';
     echo '<label for="end_date">End Date:</label>';
     echo '<input type="date" id="end_date" onchange="updatePrice()" name="end_date" required><br><br>';
-    echo ' <input type="submit" value="Submit">';
     echo '<label for="total-price">Total Price:</label>';
-    echo '<input type="text" id="total-price" disabled>';
+    echo '<input type="text" id="total-price" name="total_price" value="total-price" disabled>';
+    echo ' <input type="submit" value="Submit">';
+
     echo '<br>';
     echo '</form>';
     ?>
@@ -60,7 +61,7 @@
             let totalPrice = differenceInDays * pricePerDay;
             totalPrice = totalPrice.toFixed(2);
 
-            document.getElementById("total-price").value = "$" + totalPrice;
+            document.getElementById("total-price").value = "Ksh" + totalPrice;
         }
     </script>
 

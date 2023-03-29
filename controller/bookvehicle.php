@@ -1,8 +1,14 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ./pages/login.php');
+
+    exit();
+}
 // import connection string 
 include('../controller/connection.php');
 // $user_id = $_SESSION['user_id'];
-$user_id = 1;
+$user_id = 2;
 // echo '<p>The code reached here</p>';
 if (isset($_GET['vehicle_id'])) {
     $vehicle_id = $_GET['vehicle_id'];
@@ -33,6 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get the form data
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
+
+    $price = $row['price_per_day'];
+    // $price = $row['price_per_day'] * day;
 
     // Prepare the SQL statement
     $stmt = mysqli_prepare($conn, "INSERT INTO hires (user_id, vehicle_id, start_date, end_date, total_price) VALUES (?, ?, ?, ?, ?)");
